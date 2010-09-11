@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+ <!-- Define o modelo 3d da aeronave -->
+ <path>KC-390.ac</path>
+ 
+ <!-- REFERENCE / REFERENCIA
+ 
+	LIVRO
+	PAGINA DA INTERNET, ENDERECO ELETRONICO
+	COMUNIDADES, CONVERSAS
+	
+-->
+
+	<!-- O Sistema de selecao de textura -->
+	<!-- Livery System -->
+<!--
+    <nasal>
+        <load>
+            var livery_update = aircraft.livery_update.new("Aircraft/KC-390/Models/Liveries", 10);
+        </load>
+
+        <unload>
+            livery_update.stop();
+        </unload>
+    </nasal>
+ -->
+    <!-- Objetos da primeira textura --> 
+<!--
+     <animation>
+		<type>material</type>
+			<object-name>fuselage</object-name>
+			<object-name>exemplo1</object-name>
+			<object-name>exemplo2</object-name>
+			<object-name>exemplo3</object-name>
+		<property-base>sim/model/livery</property-base>
+		<texture-prop>texture</texture-prop>
+      <texture>KC-390.png</texture>
+    </animation>
+ -->    
+    <!-- Objetos da segunda textura --> 
+<!--
+     <animation>
+		<type>material</type>
+			<object-name>misc1</object-name>
+			<object-name>misc2</object-name>
+			<object-name>misc3</object-name>
+		<property-base>sim/model/miscelania</property-base>
+		<texture-prop>texture</texture-prop>
+		<texture>KC-390misc.png</texture>
+    </animation>
+-->
+<!-- Livery System -->
+
+
+<!-- ############### -->
+<!-- ### MODELOS ### -->
+<!-- ############### -->
+
+<!-- Adiciona pushback -->
+<model>
+	<name>Pushback</name>
+	<path>Models\Airport\Pushback\Military.xml</path>
+	<offsets>
+		<x-m>-10.5988</x-m>
+		<y-m>0</y-m>
+		<z-m>0.030237</z-m>
+	</offsets>
+</model>
+
+<!-- Adiciona interior -->
+<model>
+	<name>Cabine</name>
+	<path>Aircraft/KC-390/Models/Interior/interior.xml</path>
+	<offsets>
+		<x-m>0.00</x-m>
+		<y-m>0.00</y-m>
+		<z-m>0.00</z-m>
+	</offsets>
+</model>
+
+
+
+<!-- ################# -->
+<!-- ### ANIMACOES ### -->
+<!-- ################# -->
+
+
+<!-- ########### -->
+<!-- ## Luzes ## -->
+<!-- ########### -->
+
+<!-- Navegação fuselagem porta traseira -->
+<model>
+	<path>Aircraft/KC-390/Models/Effects/Lights/beacon.xml</path>
+	<offsets>
+		<x-m>-0.775079</x-m>
+		<y-m>0</y-m>
+		<z-m>5.78426</z-m>
+	</offsets>
+</model>
+
+<model>
+	<path>Aircraft/KC-390/Models/Effects/Lights/beacon.xml</path>
+	<offsets>
+		<x-m>5.48425</x-m>
+		<y-m>0</y-m>
+		<z-m>1.05243</z-m>
+	</offsets>
+</model>
+
+<!-- Asa esquerda -->
+<model>
+	<path>Aircraft/KC-390/Models/Effects/Lights/RedLight.xml</path>
+	<offsets>
+		<x-m>4.52772</x-m>
+		<y-m>-16.9441</y-m>
+		<z-m>3.77306</z-m>
+	</offsets>
+</model>
+
+<!-- Asa direita -->
+<model>
+	<path>Aircraft/KC-390/Models/Effects/Lights/GreenLight.xml</path>
+	<offsets>
+		<x-m>4.52772</x-m>
+		<y-m> 16.9441</y-m>
+		<z-m>3.77306</z-m>
+	</offsets>
+</model>
+
+<!-- Fim fuselagem -->
+<model>
+	<path>Aircraft/KC-390/Models/Effects/Lights/WhiteLight.xml</path>
+	<offsets>
+		<x-m>19.9887</x-m>
+		<y-m>0.0</y-m>
+		<z-m>11.1573</z-m>
+	</offsets>
+</model>
+
+<!-- Trem dianteiro, landing lights -->
+<model>
+	<path>Aircraft/KC-390/Models/Effects/Lights/White-light/Landinglight.xml</path>
+	<offsets>
+		<x-m>-10.8821</x-m>
+		<y-m>-0.364042</y-m>
+		<z-m>0.806207</z-m>
+	</offsets>
+</model>
+
+<model>
+	<path>Aircraft/KC-390/Models/Effects/Lights/White-light/Landinglight.xml</path>
+	<offsets>
+		<x-m>-10.8821</x-m>
+		<y-m> 0.364042</y-m>
+		<z-m>0.806207</z-m>
+	</offsets>
+</model>
+
+<!-- END LIGHTS -->
+
+
+<!-- ######### -->
+<!-- ANIMACOES -->
+<!-- ######### -->
+
+	<!-- ############### -->
+	<!--  Trem de pouso  -->
+	<!-- ############### -->
+	
+	<!-- Trem de pouso dianteiro -->
+		<!-- Mostra e esconde o trem de pouso -->			 
+		<!-- recolhe o eixo do trem e roda -->
+		
+	<!-- Trem de pouso traseiro esquerdo -->
+		<!-- Mostra e esconde o trem de pouso -->			 
+		<!-- recolhe o eixo do trem e roda -->
+	 
+	<!-- Trem de pouso traseiro direito -->
+		<!-- Mostra e esconde o trem de pouso -->			 
+		<!-- recolhe o eixo do trem e roda -->
+	 
+	<!-- Rudder -->
+
+	<!-- Elevators -->
+
+	
+	<!-- Flaps -->
+
+	
+	<!-- Iluminacao noturna -->
+		<!-- Seleciona objetos da iluminacao noturna -->
+
+		<!-- Rudder iluminado -->
+  
+		<!-- janelas dos PAX -->
+
+     
+</PropertyList>

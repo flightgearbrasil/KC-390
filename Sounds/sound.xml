@@ -1,0 +1,661 @@
+<?xml version="1.0"?>
+<PropertyList>
+ <fx>
+  <!-- ##################### -->
+  <!-- ## INTERIOR ######### -->
+  <!-- ##################### -->
+
+
+  <!-- REVERSORES -->
+  <engine>
+   <name>Left engine 1 reverse inside</name>
+   <path>Sounds/exhaust_loop.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <or>
+     <property>/engines/engine/reverser-pos-norm</property>
+    </or>
+    <and>
+     <property>engines/engine[0]/running</property>
+    </and>
+   </condition>
+   <volume>
+    <property>/engines/engine[0]/thrust_lb</property>
+    <type>ln</type>
+    <factor>0.0050</factor>
+    <offset>0.05</offset>
+   </volume>
+   <pitch>
+    <offset>1.6</offset>
+   </pitch>
+  </engine>
+
+  <engine>
+   <name>Left engine 2 reverse inside</name>
+   <path>Sounds/exhaust_loop.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <or>
+     <property>/engines/engine/reverser-pos-norm</property>
+    </or>
+    <and>
+     <property>engines/engine[1]/running</property>
+    </and>
+   </condition>
+   <volume>
+    <property>/engines/engine[1]/thrust_lb</property>
+    <type>ln</type>
+    <factor>0.0050</factor>
+    <offset>0.05</offset>
+   </volume>
+   <pitch>
+    <offset>1.6</offset>
+   </pitch>
+  </engine>
+
+  <!-- TURBINA -->
+  <engineI1>
+   <name>Engine 1</name>
+   <path>Sounds/jet.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <and>
+     <equals>
+      <property>/engines/engine[0]/running</property>
+      <value>true</value>
+     </equals>
+     <equals>
+      <property>/sim/current-view/internal</property>
+      <value>true</value>
+     </equals>
+    </and>
+   </condition>
+   <volume>
+    <property>/engines/engine[0]/thrust_lb[0]</property>
+    <type>ln</type>
+    <factor>0.10</factor>
+    <offset>0.05</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine[0]/thrust_lb[0]</property>
+    <type>log</type>
+    <factor>0.20</factor>
+    <offset>0.10</offset>
+   </pitch>
+   <position>
+    <!-- x/y/z == right/up/back -->
+    <x> -8.05523 </x>
+    <y> 2.44749 </y>
+    <z> -7.21154 </z>
+   </position>
+   <reference-dist>200.0</reference-dist>
+   <max-dist>500.0</max-dist>
+  </engineI1>
+
+  <engineI2>
+   <name>Engine 2</name>
+   <path>Sounds/jet.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <and>
+     <equals>
+      <property>/engines/engine[1]/running</property>
+      <value>true</value>
+     </equals>
+     <equals>
+      <property>/sim/current-view/internal</property>
+      <value>true</value>
+     </equals>
+    </and>
+   </condition>
+   <volume>
+    <property>/engines/engine[1]/thrust_lb[0]</property>
+    <type>ln</type>
+    <factor>0.10</factor>
+    <offset>0.05</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine[1]/thrust_lb[0]</property>
+    <type>log</type>
+    <factor>0.20</factor>
+    <offset>0.10</offset>
+   </pitch>
+
+   <position>
+    <!-- x/y/z == right/up/back -->
+    <x>  8.05523 </x>
+    <y> 2.44749 </y>
+    <z> -7.21154 </z>
+   </position>
+   <reference-dist>200.0</reference-dist>
+   <max-dist>500.0</max-dist>
+  </engineI2>
+
+  <!-- Desligando a turbina -->
+  <engineTOff1>
+   <name>Engine 1 shutdown</name>
+   <path>Sounds/turbine_shutdown.wav</path>
+   <condition>
+    <and>
+     <equals>
+      <property>/engines/engine[0]/starter</property>
+      <value>0</value>
+     </equals>
+    </and>
+    <and>
+     <equals>
+      <property>/engines/engine[0]/cutoff</property>
+      <value>1</value>
+     </equals>
+    </and>
+   </condition>
+   <position>
+    <!-- x/y/z == right/up/back -->
+    <x> -m8.05523 </x>
+    <y> 2.44749 </y>
+    <z> -7.21154 </z>
+   </position>
+  </engineTOff1>
+
+  <engineTOff2>
+   <name>Engine 2 shutdown</name>
+   <path>Sounds/turbine_shutdown.wav</path>
+   <condition>
+    <and>
+     <equals>
+      <property>/engines/engine[1]/starter</property>
+      <value>0</value>
+     </equals>
+    </and>
+    <and>
+     <equals>
+      <property>/engines/engine[1]/cutoff</property>
+      <value>1</value>
+     </equals>
+    </and>
+   </condition>
+   <position>
+    <!-- x/y/z == right/up/back -->
+    <x>  8.05523 </x>
+    <y> 2.44749 </y>
+    <z> -7.21154 </z>
+   </position>
+  </engineTOff2>
+
+  <!-- Ligando a turbina -->
+  <engineTS1>
+   <name>Engine 1 startup</name>
+   <path>Sounds/turbine_start.wav</path>
+   <condition>
+    <and>
+     <equals>
+      <property>/engines/engine[0]/starter</property>
+      <value>1</value>
+     </equals>
+    </and>
+    <and>
+     <equals>
+      <property>/engines/engine[0]/cutoff</property>
+      <value>0</value>
+     </equals>
+    </and>
+   </condition>
+  </engineTS1>
+
+  <engineTS2>
+   <name>Engine 2 startup</name>
+   <path>Sounds/turbine_start.wav</path>
+   <condition>
+    <and>
+     <equals>
+      <property>/engines/engine[1]/starter</property>
+      <value>1</value>
+     </equals>
+    </and>
+    <and>
+     <equals>
+      <property>/engines/engine[1]/cutoff</property>
+      <value>0</value>
+     </equals>
+    </and>
+   </condition>
+  </engineTS2>
+
+  <!-- Condicionador de ar -->
+  <arcondicionado>
+   <name>Aircond</name>
+   <mode>looped</mode>
+   <path>Sounds/aircond.wav</path>
+   <condition>
+    <equals>
+     <property>/sim/current-view/internal</property>
+     <value>true</value>
+    </equals>
+   </condition>
+  </arcondicionado>
+
+  <!-- PAX -->
+  <conversapax>
+   <name>PAX conversa</name>
+   <mode>looped</mode>
+   <path>Sounds/Airplane_ambience.wav</path>
+   <condition>
+    <equals>
+     <property>/sim/current-view/internal</property>
+     <value>true</value>
+    </equals>
+   </condition>
+  </conversapax>
+
+
+  <!-- ##################### -->
+  <!-- ## EXTERIOR ######### -->
+  <!-- ##################### -->
+  
+  <!-- Externo -->
+		<engineWE1>
+			<name>Engine1whine</name>
+			<path>Sounds/whine.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+				<equals>
+				<property>/engines/engine[0]/running</property>
+				<value>true</value>
+				</equals>
+				<equals>
+				<property>/sim/current-view/internal</property>
+				<value>false</value>
+				</equals>
+				<not>
+					<or>
+					<equals>
+					<property>/sim/current-view/view-number</property>
+					<value>3</value>
+					</equals>
+					<equals>
+					<property>/sim/current-view/view-number</property>
+					<value>4</value>
+					</equals>
+					</or>
+				</not>
+				
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine[0]/thrust_lb[0]</property>
+				<type>ln</type>
+				<factor>0.10</factor>
+				<offset>0.1</offset>
+			</volume>
+			<pitch>
+				<property>/engines/engine[0]/thrust_lb[0]</property>
+				<type>log</type>
+				<factor>0.20</factor>
+				<offset>0.10</offset>
+			</pitch>
+			<max-dist>500.0</max-dist>
+		</engineWE1>
+
+		<engineWE2>
+			<name>Engine 2 whine</name>
+			<path>Sounds/whine.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+				<equals>
+				<property>/engines/engine[1]/running</property>
+				<value>true</value>
+				</equals>
+				<equals>
+				<property>/sim/current-view/internal</property>
+				<value>false</value>
+				</equals>
+				<not>
+					<or>
+					<equals>
+					<property>/sim/current-view/view-number</property>
+					<value>3</value>
+					</equals>
+					<equals>
+					<property>/sim/current-view/view-number</property>
+					<value>4</value>
+					</equals>
+					</or>
+				</not>
+				
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine[1]/thrust_lb[0]</property>
+				<type>ln</type>
+				<factor>0.10</factor>
+				<offset>0.1</offset>
+			</volume>
+			<pitch>
+				<property>/engines/engine[1]/thrust_lb[0]</property>
+				<type>log</type>
+				<factor>0.20</factor>
+				<offset>0.10</offset>
+			</pitch>
+			<max-dist>500.0</max-dist>
+		</engineWE2>
+
+  <!-- TREM DE POUSO -->
+
+  <rumble>
+   <name>rumble</name>
+   <mode>looped</mode>
+   <path>Sounds/rumble.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <type>log</type>
+    <factor>0.5</factor>
+   </volume>
+  </rumble>
+
+  <gear>
+   <name>gear</name>
+   <mode>in-transit</mode>
+   <path>Sounds/gear.wav</path>
+   <property>/gear/gear[0]/position-norm</property>
+   <pitch>
+    <internal>dt_play</internal>
+    <offset>1.0</offset>
+    <factor>-0.001</factor>
+   </pitch>
+  </gear>
+
+  <gear>
+   <name>gear-lock</name>
+   <path>Sounds/gear-lck.wav</path>
+   <condition>
+    <equals>
+     <property>/gear/gear[0]/position-norm</property>
+     <value>0</value>
+    </equals>
+   </condition>
+  </gear>
+
+  <squeal>
+   <name>squeal</name>
+   <path>Sounds/squeal.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/speed-down-fps</property>
+    <factor>0.05</factor>
+   </volume>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+   </volume>
+   <volume>
+    <internal>dt_stop</internal>
+    <factor>0.05</factor>
+    <max>1.0</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.0025</factor>
+    <offset>1.2</offset>
+   </pitch>
+  </squeal>
+
+  <squealbarulho>
+   <name>Ruido contato solo</name>
+   <path>Sounds/Solorunning.wav</path>
+   <condition>
+    <property>/gear/gear[0]/wow</property>
+   </condition>
+   <volume>
+    <property>/velocities/speed-down-fps</property>
+    <factor>0.05</factor>
+   </volume>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+   </volume>
+   <volume>
+    <internal>dt_stop</internal>
+    <factor>0.05</factor>
+    <max>1.0</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.15</factor>
+    <offset>1.2</offset>
+   </pitch>
+   <reference-dist>100</reference-dist>
+   <max-dist>1000</max-dist>
+  </squealbarulho>
+
+  <!-- FLAPS -->
+
+  <flap>
+   <name>flaps</name>
+   <mode>in-transit</mode>
+   <path>Sounds/flaps.wav</path>
+   <property>/surface-positions/flap-pos-norm</property>
+   <volume>
+    <factor>0.35</factor>
+   </volume>
+  </flap>
+
+  <!-- VENTO -->
+
+  <wind>
+   <name>wind</name>
+   <mode>looped</mode>
+   <path>Sounds/wind.wav</path>
+   <property>/velocities/airspeed-kt</property>
+   <volume>
+    <property>/position/altitude-ft</property>
+    <factor>-0.000015</factor>
+    <offset>1.0</offset>
+    <min>0.1</min>
+    <max>1.0</max>
+   </volume>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.0015</factor>
+    <min>0.03</min>
+    <max>0.25</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+    <offset>1.25</offset>
+   </pitch>
+  </wind>
+
+  <!-- ALARMES -->
+
+  <stall>
+   <name>stall</name>
+   <path>Sounds/stall.wav</path>
+   <property>/sim/alarms/stall-warning</property>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <min>30.0</min>
+   </volume>
+  </stall>
+
+  <!--OUTROSEFEITOS-->
+
+  <!-- Crash -->
+  <crash>
+   <name>Crash</name>
+   <path>Sounds/Crash2.wav</path>
+   <condition>
+    <equals>
+     <property>/sim/crashed</property>
+     <value>true</value>
+    </equals>
+   </condition>
+  </crash>
+
+  <!-- Cliquedoscontroles -->
+  <switch>
+   <name>clickon</name>
+   <mode>once</mode>
+   <path>Sounds/click.wav</path>
+   <condition>
+    <property>/sim/sound/switch</property>
+   </condition>
+   <volume>
+    <factor>0.45</factor>
+   </volume>
+   <position>
+    <x>-23</x>
+    <y>0</y>
+    <z>1</z>
+   </position>
+   <reference-dist>1.0</reference-dist>
+   <max-dist>2.0</max-dist>
+  </switch>
+
+  <switch>
+   <name>clickoff</name>
+   <mode>once</mode>
+   <path>Sounds/click.wav</path>
+   <condition>
+    <not>
+     <property>/sim/sound/switch</property>
+    </not>
+   </condition>
+   <volume>
+    <factor>0.45</factor>
+   </volume>
+   <position>
+    <x>-23</x>
+    <y>0</y>
+    <z>1</z>
+   </position>
+   <reference-dist>1.0</reference-dist>
+   <max-dist>2.0</max-dist>
+  </switch>
+
+  <!-- Somnatorre -->
+  <ambientetorre>
+   <name>AmbienteTorre</name>
+   <mode>looped</mode>
+   <path>Sounds/AirportTerminal.wav</path>
+   <condition>
+    <or>
+     <equals>
+      <property>/sim/current-view/view-number</property>
+      <value>3</value>
+     </equals>
+     <equals>
+      <property>/sim/current-view/view-number</property>
+      <value>4</value>
+     </equals>
+    </or>
+   </condition>
+   <volume>
+    <factor>5.45</factor>
+   </volume>
+  </ambientetorre>
+  
+		<engineTW>
+			<name>Engine Tower whine</name>
+			<path>Sounds/whine.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<or>
+						<equals>
+							<property>/engines/engine[0]/running</property>
+							<value>true</value>
+						</equals>
+						<equals>
+							<property>/engines/engine[1]/running</property>
+							<value>true</value>
+						</equals>
+					</or>
+					<equals>
+						<property>/sim/current-view/internal</property>
+						<value>false</value>
+					</equals>
+					<or>
+						<equals>
+							<property>/sim/current-view/view-number</property>
+							<value>3</value>
+						</equals>
+						<equals>
+							<property>/sim/current-view/view-number</property>
+							<value>4</value>
+						</equals>
+					</or>
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine[1]/thrust_lb[0]</property>
+				<type>ln</type>
+				<factor>0.010</factor>
+				<offset>0.1</offset>
+			</volume>
+			<pitch>
+				<property>/engines/engine[1]/thrust_lb[0]</property>
+				<type>log</type>
+				<factor>0.20</factor>
+				<offset>0.10</offset>
+			</pitch>
+			<max-dist>300.0</max-dist>
+		</engineTW>
+
+  <!-- Chuva -->
+  <rain>
+   <name>rain</name>
+   <mode>looped</mode>
+   <path>Sounds/rain.wav</path>
+   <condition>
+    <and>
+     <equals>
+      <property>environment/rain/above_clouds</property>
+      <value>0</value>
+     </equals>
+     <or>
+      <greater-than>
+       <property>environment/metar/rain-norm</property>
+       <value>0.2</value>
+      </greater-than>
+      <greater-than>
+       <property>environment/metar/snow-norm</property>
+       <value>0.2</value>
+      </greater-than>
+     </or>
+    </and>
+   </condition>
+   <volume>
+    <property>/environment/metar/rain-norm</property>
+    <factor>1.00</factor>
+    <offset>0.00</offset>
+    <min>0.4</min>
+    <max>0.9</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.001</factor>
+    <offset>1.0</offset>
+   </pitch>
+  </rain>
+
+
+
+ </fx>
+
+</PropertyList>
