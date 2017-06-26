@@ -12,7 +12,7 @@
 		SET-2009, inicio do desenvolvimento do modelo.
 		15-JAN-2010, primeira versao apresentada.
 		05-FEB-2010, atualizado o sistema de dialogos integrado.
-		04-JUN-2010, atualizado o sistema de som e elétrico.
+		04-JUN-2010, atualizado o sistema de som e elÃ©trico.
 
 	License : Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported license. 
 	
@@ -69,7 +69,7 @@
 			<audible>true</audible>
 			<!-- Helice -->
 <!--			<path>Aircraft/Generic/generic-sound.xml</path>		-->
-			<!-- Turbohélice -->
+			<!-- TurbohÃ©lice -->
 			<!-- Turbofan -->
 			<path>Aircraft/KC-390/Sounds/sound.xml</path>
 			<!-- Turbojato -->
@@ -80,13 +80,13 @@
 			<splash-texture>Aircraft/KC-390/splash.png</splash-texture>
 		</startup>
 
-		<!-- Definição do Painel 2D da Aeronave -->
+		<!-- DefiniÃ§Ã£o do Painel 2D da Aeronave -->
 		<panel>
 			<path>Aircraft/737-300/Panels/737-ifr-panel.xml</path>
 			<visibility>true</visibility>
 		</panel>
 		
-		<!-- modificações para funcionamento dos liveries - http://wiki.flightgear.org/index.php/Livery_over_MP -->
+		<!-- modificaÃ§Ãµes para funcionamento dos liveries - http://wiki.flightgear.org/index.php/Livery_over_MP -->
 		<model>
 			<path>Aircraft/KC-390/Models/KC-390.xml</path>
 			<livery>
@@ -588,7 +588,7 @@
 		
 	</nasal>
 
-	<!-- Ajustes da Instrumentação -->
+	<!-- Ajustes da InstrumentaÃ§Ã£o -->
 	<instrumentation>
 		<mk-viii>
 			<serviceable>true</serviceable>
