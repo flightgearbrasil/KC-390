@@ -1,4 +1,4 @@
-LICENSE / LICENÇA
+LICENSE / LICENÃ‡A
 =================
 
 ---------------------------------------------------------------------------
@@ -27,11 +27,11 @@ LICENSE / LICENÇA
 
 
 ---------------------------------------------------------------------------
-PORTUGUÊS - BRASIL 
+PORTUGUÃŠS - BRASIL 
 ---------------------------------------------------------------------------
 
     MEXFG - O MEXFG, ou Modelo de Estrutura XML de Aeronave para o FlightGear 
-    é um pacote que oferece uma estrutura de arquivos XML pré-pronta para o 
+    Ã© um pacote que oferece uma estrutura de arquivos XML prÃ©-pronta para o 
     desenvolvimento de uma aeronave no simulador de voo FlightGear.
      
     Copyright (C) 2010 Isaias V. Prestes

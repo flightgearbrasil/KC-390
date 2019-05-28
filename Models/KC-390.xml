@@ -90,7 +90,7 @@
 <!-- ## Luzes ## -->
 <!-- ########### -->
 
-<!-- Navegação fuselagem porta traseira -->
+<!-- NavegaÃ§Ã£o fuselagem porta traseira -->
 <model>
 	<path>Aircraft/KC-390/Models/Effects/Lights/beacon.xml</path>
 	<offsets>

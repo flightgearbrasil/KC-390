@@ -3,11 +3,11 @@
 # 		revision September 29, 2009 12:58:23 AM 
 #
 togglereverser = func {
-	# Vari·veis FDM
+	# Vari√°veis FDM
 	FDMMotor1 = "/fdm/jsbsim/propulsion/engine";
 	FDMMotor2 = "/fdm/jsbsim/propulsion/engine[1]";
 
-	# Vari·veis controle
+	# Vari√°veis controle
 	ControleMotor1 = "/controls/engines/engine"; 
 	ControleMotor2 = "/controls/engines/engine[1]"; 
 
@@ -18,15 +18,15 @@ togglereverser = func {
 	ReversorMotor1 = "/engines/engine/reverser-pos-norm"; 
 	ReversorMotor2 = "/engines/engine[1]/reverser-pos-norm"; 
 
-	# Captura situaÁ„o do motor 1
+	# Captura situa√ß√£o do motor 1
 	val = getprop(ReversorMotor1);
 	
-	# Se o motor 1 est· com reversor desativado, caso de val == 0,
-	#		1) ent„o avanÁo nos reversores, 
-	#		2) ajusta o ‚ngulo do jato para contr·rio,
+	# Se o motor 1 est√° com reversor desativado, caso de val == 0,
+	#		1) ent√£o avan√ßo nos reversores, 
+	#		2) ajusta o √¢ngulo do jato para contr√°rio,
 	#		3) acerta o controle para ligar esses dispositivos,
 	#		4) ajusta o motor para ligado com reversor a 180 graus (2),
-	#		   contr·rio do que deveria ser o gradiente do empuxo.
+	#		   contr√°rio do que deveria ser o gradiente do empuxo.
 	if (val == 0 or val == nil) {
 		interpolate(ReversorMotor1, 1.0, 1.4); 
 		interpolate(ReversorMotor2, 1.0, 1.4);  
@@ -41,12 +41,12 @@ togglereverser = func {
 		setprop(EntradaSIM,"engine[1]", "true");
 	} else {
 		if (val == 1.0){
-			# Sen„o, caso de val == 1 (ou seja, reversor j· estava ativado),
-			#		1) ent„o avanÁo nos reversores, 
-			#		2) ajusta o ‚ngulo do jato reverso para empuxo normal,
+			# Sen√£o, caso de val == 1 (ou seja, reversor j√° estava ativado),
+			#		1) ent√£o avan√ßo nos reversores, 
+			#		2) ajusta o √¢ngulo do jato reverso para empuxo normal,
 			#		3) acerta o controle para desligar esses dispositivos,
 			#		4) ajusta o motor para ligado com reversor a 0 graus,
-			#		   gradiente padr„o do empuxo.
+			#		   gradiente padr√£o do empuxo.
 		
 			interpolate(ReversorMotor1, 0.0, 1.4);
 			interpolate(ReversorMotor2, 0.0, 1.4);   

@@ -15,7 +15,7 @@
    <object-name>propblur</object-name>
  </animation>   
 
- <!-- Mise en place des pales par défaut -->
+ <!-- Mise en place des pales par dÃ©faut -->
  <animation>
    <type>select</type>
    <object-name>pal1</object-name>
@@ -98,7 +98,7 @@
    </axis>
  </animation>
 
-<!-- Sélection Pales/disque en fonction de "RPM" -->
+<!-- SÃ©lection Pales/disque en fonction de "RPM" -->
  <animation>
    <type>select</type>
    <object-name>propdisc</object-name>
@@ -127,7 +127,7 @@
    </condition>
  </animation>
 
-<!-- Rotation de l'hélice -->
+<!-- Rotation de l'hÃ©lice -->
  <animation>
    <type>spin</type>
    <object-name>heliceD</object-name>

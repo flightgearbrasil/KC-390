@@ -25,17 +25,23 @@
     <object-name>intvitreBD</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>shader.png</texture>
+  <animation>
+
+    <type>shader</type>
+
+    <shader>chrome</shader>
+
+    <texture>shader.png</texture>
+
     <object-name>intvitres</object-name>
     <object-name>intvitreAG</object-name>
     <object-name>intvitreAD</object-name>
     <object-name>intvitreBG</object-name>
     <object-name>intvitreBD</object-name>
-  </animation>
-
+  </animation>
+
+
+
   <animation>
     <type>noshadow</type>
     <object-name>intvitres</object-name>
